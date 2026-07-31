@@ -32,3 +32,7 @@
    ```
 2. رابط اللعبة 🎮 
    
+https://puzzle.haythamzeidan.workers.dev/
+
+أو 
+https://wazefapress.github.io/Professional-Picture-Puzzle-Game/
