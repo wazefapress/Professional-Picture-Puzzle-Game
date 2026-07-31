@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- SEO & Social Media Meta Tags -->
+    <title>لعبة تركيب الصور الاحترافية</title>
+    <meta name="description" content="تحدى نفسك في لعبة تركيب الصور، تجاوز 10 مراحل واجمع 100 نقطة تفوز باللعبة.">
+    <meta property="og:title" content="لعبة تركيب الصور | تحدى ذكائك">
+    <meta property="og:description" content="10 مراحل مشوقة من تركيب الصور، هل يمكنك تجميع 100 نقطة؟">
+    <meta property="og:type" content="website">
+    
+    <!-- Bootstrap 5 & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+       <link rel="stylesheet" href="style.css">
+    
+ 
+</head>
+<body>
+
+    <div id="landscape-warning" class="bg-dark text-white text-center d-none flex-column justify-content-center align-items-center position-fixed top-0 start-0 w-100 h-100 z-3">
+        <i class="fas fa-mobile-alt fa-4x mb-3" style="animation: rotatePhone 2s infinite ease-in-out;"></i>
+        <h2>عذراً، يرجى تدوير الجهاز</h2>
+        <p>الرجاء اللعب بالوضع العمودي للحصول على أفضل تجربة.</p>
+    </div>
+
+    <div id="app-container">
+        
+        <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center shadow-sm">
+<h5 class="m-0 fw-bold"><i class="fas fa-puzzle-piece me-1"></i>  تركيب الصور للأطفال</h5> 
+
+            <div class="score-badge bg-white text-primary px-3 py-1 rounded-pill fw-bold shadow-sm">
+                <i class="fas fa-star text-warning"></i> النقاط: <span id="score">0</span>/100
+            </div>
+        </header>
+
+        <main id="menu-screen" class="d-block">
+            <div class="alert alert-info text-center small mb-3">
+                <i class="fas fa-info-circle"></i> رتب قطع الصورة لتفوز بـ 10 نقاط وتفتح المرحلة التالية!
+            </div>
+            <div class="row g-3" id="levels-grid"></div>
+        </main>
+
+        <main id="game-screen" class="d-none flex-column align-items-center">
+            <div class="w-100 d-flex justify-content-between align-items-center mb-2">
+                <button class="btn btn-outline-danger btn-sm fw-bold" onclick="showMenu()">
+                    <i class="fas fa-arrow-right"></i> عودة
+                </button>
+                <h5 id="current-level-title" class="m-0 fw-bold text-primary">المرحلة 1</h5>
+            </div>
+            
+            <div class="puzzle-wrapper">
+                <div id="puzzle-board" class="puzzle-board"></div>
+            </div>
+
+            <button class="btn btn-success w-100 mt-3 fw-bold shadow-sm" onclick="checkPuzzleManually()">
+                <i class="fas fa-check-circle"></i> تحقق من حل اللغز
+            </button>
+            
+            <div class="alert alert-light text-center mt-2 border shadow-sm small w-100">
+                <i class="fas fa-hand-pointer text-primary"></i> انقر على أي قطعتين لتبديل مكانهما حتى تكمل شكل الصورة الصحيح.
+            </div>
+        </main>
+
+        <main id="victory-screen" class="d-none flex-column justify-content-center align-items-center text-center">
+            <i class="fas fa-trophy fa-5x text-warning mb-3"></i>
+            <h2 class="text-success fw-bold mb-3">ألف مبروك!</h2>
+            <p class="text-muted mb-4">لقد أنهيت جميع المراحل الـ 10 بامتياز وجمعت 100 نقطة كاملة!</p>
+            <button class="btn btn-success btn-lg mb-3 w-100 fw-bold shadow" onclick="shareGame()">
+                <i class="fas fa-share-nodes"></i> شارك إنجازك
+            </button>
+            <button class="btn btn-outline-primary w-100 fw-bold" onclick="resetGame()">
+                <i class="fas fa-redo"></i> العب مرة أخرى
+            </button>
+        </main>
+
+        <footer class="bg-light text-center p-2 border-top">
+            <small class="text-muted" style="font-size: 0.8rem;">
+                تطوير وتصميم: <a href="https://www.patreon.com/HaythamZeidan" target="_blank" class="text-decoration-none fw-bold text-primary">هيثم زيدان</a> &copy; 2026
+            </small>
+        </footer>
+    </div>
+
+    <audio id="win-sound" src="win.mp3" preload="auto"></audio>
+   <script src="game.js"></script>
+  
+</body>
+</html>
