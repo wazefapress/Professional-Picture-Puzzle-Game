@@ -34,5 +34,11 @@
    
 https://puzzle.haythamzeidan.workers.dev/
 
-أو 
+او
+
 https://wazefapress.github.io/Professional-Picture-Puzzle-Game/
+
+
+المزيد من الألعاب 
+
+https://games.haythamzeidan.workers.dev/
